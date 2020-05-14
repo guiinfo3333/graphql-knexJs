@@ -1,0 +1,21 @@
+
+type User {     #como vai ser o retorno do nosso usuario
+id: ID!,
+name: String!,
+email: String!
+
+}
+
+type Query {
+
+users: [User]!  #tem q retornar o usuario e tbm um arraya
+user(id:ID!) : User    #retornando apenas um usuario
+
+}
+
+type Mutation {
+
+createUser(name: String!, email:String!) : User
+
+
+}

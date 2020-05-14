@@ -1,0 +1,17 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts" :{
+    "dev" : "nodemon src/server.js"
+  },
+  "dependencies": {
+    "graphql-yoga": "^1.18.3",
+    "knex": "^0.21.1",
+    "mysql2": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
