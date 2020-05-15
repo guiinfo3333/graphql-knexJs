@@ -11,7 +11,7 @@ Query : {
 },
 
 Mutation : {
-    createUser: (_,{name,email}) => UserController.create({name,email})
+    createUser: (_,{name,email}) => UserController.create(name,email)
 } 
 
 

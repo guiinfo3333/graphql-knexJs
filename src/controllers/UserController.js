@@ -10,39 +10,28 @@ const users = await knex('users').select();
  return users;
 
 
-
 },
 async FindByPk(id){
    
     const users = await knex('users').select().where({id});
-    
 
- 
-    console.log(users);
-     return users;
+    
+     return users[0];  //retorna um array aí eu tenho q pegar a primeira posicao pra eu ter acesso as propriedades
     
     }
-//     ,
-// async create(req,res){
-//     const {name,email} = req.body;
-//     await knex('users').insert({
-//         name,
-//         email
-//     })
+    ,
+async create(name,email){
 
-// },
-// async update(req,res){
-//     const {id} = req.params;
-//     const {name,email} = req.body;
-//     await knex('users')
-//     .update({
-//         name,
-//         email
-//     })
-//     .where(id)
-    
-    
-// }
+ const user =  await knex('users').insert({   //aqui ele só retorna um array e dentro dele tem o id aí eu tenho q criar outro objeto e setar o id para dar tudo certo
+        name:name,
+        email:email
+    })
+    const users=[];
+    users.id = user[0];
+    return users;
+
+}
+
 }
 
 
